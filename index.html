@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crystal Launcher - Officiel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --mc-bg: #1A1A1A;
+            --mc-panel: #2D2D2D;
+            --mc-green: #5C8E32;
+            --mc-green-hover: #70A63E;
+            --mc-border-dark: #111111;
+            --crystal-blue: #00F2FE;
+            --text-main: #E0E0E0;
+            --text-muted: #888888;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'VT323', monospace;
+            font-size: 1.4rem;
+        }
+
+        body {
+            background-color: var(--mc-bg);
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), radial-gradient(circle, #252525 20%, #121212 80%);
+            color: var(--text-main);
+            scroll-behavior: smooth;
+        }
+
+        a { text-decoration: none; color: inherit; }
+
+        /* Navigation Minimaliste */
+        header {
+            background-color: rgba(18, 18, 18, 0.95);
+            border-bottom: 4px solid #3C3C3C;
+            position: fixed;
+            top: 0; width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 6%;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1rem;
+            color: #FFF;
+        }
+
+        .logo span {
+            color: var(--crystal-blue);
+        }
+
+        nav ul { display: flex; gap: 25px; list-style: none; }
+        nav a { transition: color 0.2s; color: var(--text-muted); }
+        nav a:hover { color: #FFF; }
+
+        /* Hero Concept Epuré */
+        .hero {
+            min-height: 75vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px 40px;
+        }
+
+        .hero h1 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 2rem;
+            line-height: 1.4;
+            color: #FFF;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 0px #000;
+        }
+
+        .hero h1 span {
+            color: var(--crystal-blue);
+            text-shadow: 3px 3px 0px #004455;
+        }
+
+        .hero p {
+            max-width: 600px;
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            margin-bottom: 35px;
+        }
+
+        /* Bouton Minecraft UI */
+        .mc-btn {
+            display: inline-block;
+            background-color: var(--mc-green);
+            border: 4px solid;
+            border-color: #7DAE4F var(--mc-border-dark) var(--mc-border-dark) #7DAE4F;
+            color: #FFF;
+            padding: 12px 30px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.85rem;
+            cursor: pointer;
+            text-shadow: 2px 2px 0px #000;
+            box-shadow: inset -4px -4px 0px #3B5C1F;
+            transition: all 0.1s;
+        }
+
+        .mc-btn:hover { background-color: var(--mc-green-hover); }
+        .mc-btn:active {
+            border-color: var(--mc-border-dark) #7DAE4F #7DAE4F var(--mc-border-dark);
+            box-shadow: inset 4px 4px 0px #3B5C1F;
+            padding-top: 14px;
+            padding-bottom: 10px;
+        }
+
+        /* Section Blocs */
+        .features {
+            padding: 40px 6% 80px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .mc-block {
+            background-color: var(--mc-panel);
+            border: 4px solid;
+            border-color: #444 #151515 #151515 #444;
+            padding: 25px;
+            box-shadow: inset -4px -4px 0px #1A1A1A;
+        }
+
+        .mc-block h3 {
+            color: #FFF;
+            font-size: 1.7rem;
+            margin-bottom: 10px;
+            border-bottom: 2px dashed #444;
+            padding-bottom: 5px;
+        }
+
+        .mc-block h3 span { color: var(--crystal-blue); }
+        .mc-block p { color: #AAA; font-size: 1.3rem; }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            border-top: 4px solid #3C3C3C;
+            padding: 35px 6%;
+            text-align: center;
+            color: #555;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        footer a { color: var(--crystal-blue); }
+        footer .creator { color: #aaa; font-weight: bold; }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 10px; }
+            .hero h1 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">💎 CRYSTAL <span>LAUNCHER</span></div>
+        <nav>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#systeme">Système</a></li>
+                <li><a href="https://github.com/solexoff03-code/crystal-launcher" target="_blank">GitHub</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="accueil">
+        <h1>DISTRIBUTION DE CLIENTS<br><span>MINECRAFT</span></h1>
+        <p>Gérez vos fichiers et automatisez la synchronisation de vos configurations, mods et textures distants de manière fluide.</p>
+        <a href="https://github.com/solexoff03-code/crystal-launcher" class="mc-btn" target="_blank">TÉLÉCHARGER VIA GITHUB</a>
+    </section>
+
+    <section class="features" id="systeme">
+        <div class="grid">
+            <div class="mc-block">
+                <h3><span>[01]</span> Auto-Update</h3>
+                <p>Compare la structure locale des données et télécharge automatiquement les correctifs manquants.</p>
+            </div>
+            <div class="mc-block">
+                <h3><span>[02]</span> Update Maker</h3>
+                <p>Outil d'indexation intégré permettant de préparer et sérialiser proprement vos fichiers serveurs distants.</p>
+            </div>
+            <div class="mc-block">
+                <h3><span>[03]</span> Intégrité</h3>
+                <p>Algorithme de vérification léger garantissant un chargement sans corruption à chaque lancement.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Projet open-source disponible publiquement sur <a href="https://github.com/solexoff03-code/crystal-launcher" target="_blank">GitHub</a>.</p>
+        <p style="margin-top: 5px;">Développé par <span class="creator">solexoff03-code</span>.</p>
+    </footer>
+
+</body>
+</html>
